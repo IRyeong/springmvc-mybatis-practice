@@ -5,6 +5,8 @@ import java.util.List;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
@@ -48,6 +50,22 @@ public class ProductController {
 			e.printStackTrace();
 		}
 		return "list";
+	}
+
+	@GetMapping("/edit/{id}")
+	public String showEdit(@PathVariable int id, Model model) {
+		System.out.println("id : " + id);
+		ProductDTO product = service.getProductById(id);
+		System.out.println("check product : " + product);
+		model.addAttribute("holder", product);
+		return "edit";
+	}
+
+	@PostMapping("/editsave")
+	public String doEdit(ProductDTO product) {
+		System.out.println("here..");
+		service.change(product);
+		return "redirect:/list";
 	}
 
 	@RequestMapping("/error/404")

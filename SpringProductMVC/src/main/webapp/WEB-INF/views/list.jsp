@@ -15,6 +15,8 @@
 				<th>name</th>
 				<th>price</th>
 				<th>brand</th>
+				<th>edit</th>
+				<th>delete</th>
 			<tr>
 		</thead>
 		<tbody>
@@ -24,6 +26,8 @@
 					<td>${ product.name }</td>
 					<td>${ product.price }</td>
 					<td>${ product.brand }</td>
+					<td><a href="edit/${ product.id }">edit</a></td>
+					<td>delete</td>
 				</tr>
 			</c:forEach>
 		</tbody>

@@ -7,4 +7,11 @@
 	<select id="selectAll" resultType="ProductDTO">
 		select id, name, price, brand from product
 	</select>
+	<select id="selectOne" parameterType="int"
+		resultType="ProductDTO">
+		select id, name, price, brand from product where id = #{id}
+	</select>
+	<update id="update" parameterType="ProductDTO">
+		update product set name = #{name}, price = #{price}, brand = #{brand} where id = {#id}
+	</update>
 </mapper>
