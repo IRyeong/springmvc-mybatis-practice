@@ -1,6 +1,7 @@
 package com.sample.product.model.repo;
 
 import java.sql.SQLException;
+import java.util.List;
 
 import org.apache.ibatis.session.SqlSession;
 import org.springframework.stereotype.Repository;
@@ -19,6 +20,11 @@ public class ProductDAOImpl implements ProductDAO{
 	@Override
 	public int insert(ProductDTO product) throws SQLException {
 		return sqlSession.insert("product.insert", product);
+	}
+
+	@Override
+	public List<ProductDTO> selectAll() throws SQLException {
+		return sqlSession.selectList("product.selectAll");
 	}
 
 }

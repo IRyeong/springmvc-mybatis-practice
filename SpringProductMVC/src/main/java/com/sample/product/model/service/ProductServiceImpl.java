@@ -1,5 +1,7 @@
 package com.sample.product.model.service;
 
+import java.util.List;
+
 import org.springframework.stereotype.Service;
 
 import com.sample.product.dto.ProductDTO;
@@ -17,6 +19,11 @@ public class ProductServiceImpl implements ProductService {
 	@Override 
 	public int addProduct(ProductDTO product) throws Exception{
 		return dao.insert(product);
+	}
+
+	@Override
+	public List<ProductDTO> showList() throws Exception {
+		return dao.selectAll();
 	}
 	
 	

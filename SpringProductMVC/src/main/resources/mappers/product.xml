@@ -4,4 +4,7 @@
 	<insert id="insert" parameterType="ProductDTO">
 		insert into product (name, price, brand) values (#{name}, #{price}, #{brand})
 	</insert>
+	<select id="selectAll" resultType="ProductDTO">
+		select id, name, price, brand from product
+	</select>
 </mapper>
