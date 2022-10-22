@@ -8,5 +8,7 @@ public interface ProductService {
 
 	int addProduct(ProductDTO product) throws Exception;
 	List<ProductDTO> showList() throws Exception;
+	ProductDTO getProductById(int id);
+	void change(ProductDTO product);
 
 }

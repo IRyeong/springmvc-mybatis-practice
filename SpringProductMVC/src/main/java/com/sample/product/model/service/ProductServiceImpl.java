@@ -25,6 +25,17 @@ public class ProductServiceImpl implements ProductService {
 	public List<ProductDTO> showList() throws Exception {
 		return dao.selectAll();
 	}
+
+	@Override
+	public ProductDTO getProductById(int id) {
+		System.out.println("service");
+		return dao.selectById(id);
+	}
+
+	@Override
+	public void change(ProductDTO product) {
+		dao.update(product);
+	}
 	
 	
 }

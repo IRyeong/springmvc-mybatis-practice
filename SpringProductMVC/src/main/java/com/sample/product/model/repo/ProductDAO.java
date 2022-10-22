@@ -11,4 +11,8 @@ public interface ProductDAO {
 
 	List<ProductDTO> selectAll() throws SQLException;
 
+	ProductDTO selectById(int id);
+
+	void update(ProductDTO product);
+
 }

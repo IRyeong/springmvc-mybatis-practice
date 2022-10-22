@@ -29,4 +29,16 @@ public class ProductDAOImpl implements ProductDAO{
 		return sqlSession.selectList("product.selectAll");
 	}
 
+	@Override
+	public ProductDTO selectById(int id) {
+		System.out.println("dao");
+		return sqlSession.selectOne("product.selectOne", id);
+	}
+
+	@Override
+	public void update(ProductDTO product) {
+		sqlSession.update("product.update");
+	}
+
+
 }
