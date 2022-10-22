@@ -1,6 +1,7 @@
 package com.sample.product.dto;
 
 public class ProductDTO {
+	int id;
 	String name;
 	int price;
 	String brand;
@@ -9,11 +10,20 @@ public class ProductDTO {
 		// TODO Auto-generated constructor stub
 	}
 
-	public ProductDTO(String name, int price, String brand) {
+	public ProductDTO(int id, String name, int price, String brand) {
 		super();
+		this.id = id;
 		this.name = name;
 		this.price = price;
 		this.brand = brand;
+	}
+
+	public int getId() {
+		return id;
+	}
+
+	public void setId(int id) {
+		this.id = id;
 	}
 
 	public String getName() {
@@ -42,6 +52,7 @@ public class ProductDTO {
 
 	@Override
 	public String toString() {
-		return "ProductDTO [name=" + name + ", price=" + price + ", brand=" + brand + "]";
+		return "ProductDTO [id=" + id + ", name=" + name + ", price=" + price + ", brand=" + brand + "]";
 	}
+
 }
