@@ -24,15 +24,10 @@ public class ProductController {
 	public String showIndex() {
 		return "index";
 	}
-	
-	@RequestMapping("/error/404")
-	public String showError404() {
-		return "error/404";
-	}
-	
+
 	@PostMapping("/form")
 	public String doRegist(ProductDTO product) {
-		System.out.println("check input : "+product);
+		System.out.println("check input : " + product);
 		try {
 			service.addProduct(product);
 		} catch (Exception e) {
@@ -41,18 +36,28 @@ public class ProductController {
 		}
 		return "redirect:list";
 	}
-	
+
 	@GetMapping("/list")
-	public String showList(Model model){
+	public String showList(Model model) {
 		try {
 			List<ProductDTO> products = service.showList();
-			model.addAttribute(products);
-			System.out.println("check products : "+products);
+			System.out.println("check products : " + products);
+			model.addAttribute("products", products);
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 		return "list";
+	}
+
+	@RequestMapping("/error/404")
+	public String showError404() {
+		return "error/404";
+	}
+
+	@RequestMapping("/error/errorpage")
+	public String showError500() {
+		return "error/errorpage";
 	}
 
 }
