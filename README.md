@@ -7,7 +7,7 @@
 
 ## 2. Frameworks and Tools
 
-- Java : zulu-18.jdk
+- Java : 1.8, zulu-18.jdk
 - IDE : STS4
 - BackEnd : Spring 5.3.23 / MyBatis 3.5.3
 - Web Server : Tomcat 9
