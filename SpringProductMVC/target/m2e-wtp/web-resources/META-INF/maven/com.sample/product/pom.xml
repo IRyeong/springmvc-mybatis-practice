@@ -4,7 +4,7 @@
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>com.sample</groupId>
 	<artifactId>product</artifactId>
-	<name>SpringPersonMVC2</name>
+	<name>SpringProductMVC</name>
 	<packaging>war</packaging>
 	<version>1.0.0-BUILD-SNAPSHOT</version>
 	<properties>
